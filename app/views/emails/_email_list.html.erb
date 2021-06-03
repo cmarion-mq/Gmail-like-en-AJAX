@@ -1,0 +1,4 @@
+<!-- Change email's text color depending on if it is read -->
+<% color = email.read ? "text-secondary" : "text-primary" %>
+
+<td id = "<%=email.id %>" ><%= link_to email.object, email_path(email.id), class: color, remote: true %></td>

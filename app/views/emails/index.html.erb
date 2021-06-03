@@ -1,0 +1,34 @@
+<div class="container">
+  <button type="button" class="btn btn-dark"><%= link_to "recevoir un email", emails_path, method: "POST", remote: true %></button>
+  
+  <div class="row">
+    <div class="col-4">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Object</th>
+          </tr>
+        </thead>
+        <tbody id="email_list">
+          <% @emails.all.each do |email| %>
+            <tr>
+              <%=render 'emails/email_list', email: email %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" id="email_object"></th>
+          </tr>
+        </thead>
+        <tbody id="email_body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

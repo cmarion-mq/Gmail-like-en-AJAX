@@ -1,0 +1,15 @@
+<div class="container">
+  <p><%= email.body %></p>
+  <div class="row justify-content-center">
+    <div>
+      <button type="button" class="btn btn-outline-danger mx-3"%><%= link_to "Supprimer", email_path(email.id), method: "DELETE", remote: true %></button>
+    </div>
+    <div>
+      <% if email.read %>
+        <button type="button" class="btn btn-dark mx-3" %><%= link_to "Marquer comme 'Non lu'", email_path(email.id), method: "PUT", remote: true %></button>
+      <% else %>
+        <button type="button" class="btn btn-dark mx-3" %><%= link_to "Marquer comme 'Lu'", email_path(email.id), method: "PUT", remote: true %></button>
+      <% end %>
+    </div>
+  </div>
+</div>
